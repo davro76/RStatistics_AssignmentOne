@@ -1,0 +1,14 @@
+---
+title: "Assignment One"
+output: html_notebook
+---
+<br>
+Set up the working directory for this assignment.
+```{r}
+setwd("/Users/rodneydavermann/Documents/Fall2021/Statistics With R/Assignments")
+getwd()
+```
+1) Write code that allows you to create a vector x with the numbers {10,20,30,100,150,10,30,50}. Then, insert the number 168 between the third and fourth elements and assign the result of this insertion to x again.
+
+
+
