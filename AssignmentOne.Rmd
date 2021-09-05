@@ -5,10 +5,68 @@ output: html_notebook
 <br>
 Set up the working directory for this assignment.
 ```{r}
-setwd("/Users/rodneydavermann/Documents/Fall2021/Statistics With R/Assignments")
+setwd("/Users/rodneydavermann/Documents/Fall2021/R_Statistics /Assignments/RStatistics_AssignmentOne")
 getwd()
 ```
+<br>
 1) Write code that allows you to create a vector x with the numbers {10,20,30,100,150,10,30,50}. Then, insert the number 168 between the third and fourth elements and assign the result of this insertion to x again.
+```{r}
+# Create the x vector
+x <-c(10,20,30,100,150,10,30,50)
+x
+```
+<br>
+Insert the number 168 between the third which is 30 and fourth elements that is 100.
+```{r}
+# x vector
+x <-c(10,20,30,100,150,10,30,50)
+# We are using the append function to insert 168. 
+x <-append(x,168,3)
+x
+```
+<br>
+2) Create a data frame with the following four columns: x (from the previous question), x1, x2, and y. Name the data frame DFAsg1
+
+```{r}
+# Create x1, x2, vectors
+x1 <-round(rnorm(9,5,1),1)
+x2 <-round(rnorm(9,5,1),1)
+# Use sort and rep functions to create y vector
+y <-sort(rep(c("A","B","C"),3), decreasing = F)
+y
+x1
+x2
+```
+```{r}
+# create the dataframe DFAsg1
+DFAsg1 <-data.frame(x,x1,x2,y)
+DFAsg1
+```
+<br>
+3) Use the data frame DFAsg1 as a reference. Write ONE LINE of code that returns the standard deviation of the values of x for each of the letters A, B, and C.
+```{r}
+# use tapply and round functions to returns the sd of x column with three significative digits. 
+StandardDeviation<-round(tapply(DFAsg1$x,DFAsg1$y,sd),3)
+StandardDeviation
+```
+<br>
+4)Use the data frame DFAsg1 as a reference. 
+Write ONE LINE of code that returns the average of x1 and x2.
+```{r}
+# Using apply function to calculate the mean of x1 and x2, and round the results to three digits.  
+Average_x1_x2<-round(apply(DFAsg1[,c(-1,-4)],2,mean),3)
+Average_x1_x2
+```
+<br>
+5) Use the data frame DFAsg1 as a reference. Write ONE LINE of code that returns the values of x2 for records (rows) where the letter is B or C (i.e., return the values of x2 excluding rows where the letter is A)
+```{r}
+# using subset function to retrieve x2 value where y is B or C
+new_x2 <-subset(DFAsg1, select = c(x2,y), subset = (y=="B" | y=="C"))
+new_x2
+```
+
+
+
 
 
 

@@ -218,21 +218,133 @@ pre code {
 <p><br> Set up the working directory for this assignment.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0d2QoXCIvVXNlcnMvcm9kbmV5ZGF2ZXJtYW5uL0RvY3VtZW50cy9GYWxsMjAyMS9TdGF0aXN0aWNzIFdpdGggUi9Bc3NpZ25tZW50c1wiKVxuZ2V0d2QoKVxuYGBgIn0= -->
-<pre class="r"><code>setwd(&quot;/Users/rodneydavermann/Documents/Fall2021/Statistics With R/Assignments&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2V0d2QoXCIvVXNlcnMvcm9kbmV5ZGF2ZXJtYW5uL0RvY3VtZW50cy9GYWxsMjAyMS9SX1N0YXRpc3RpY3MgL0Fzc2lnbm1lbnRzL1JTdGF0aXN0aWNzX0Fzc2lnbm1lbnRPbmVcIilcbmdldHdkKClcbmBgYCJ9 -->
+<pre class="r"><code>setwd(&quot;/Users/rodneydavermann/Documents/Fall2021/R_Statistics /Assignments/RStatistics_AssignmentOne&quot;)
 getwd()</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiL1VzZXJzL3JvZG5leWRhdmVybWFubi9Eb2N1bWVudHMvRmFsbDIwMjEvU3RhdGlzdGljcyBXaXRoIFIvQXNzaWdubWVudHNcIlxuIn0= -->
-<pre><code>[1] &quot;/Users/rodneydavermann/Documents/Fall2021/Statistics With R/Assignments&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiL1VzZXJzL3JvZG5leWRhdmVybWFubi9Eb2N1bWVudHMvRmFsbDIwMjEvUl9TdGF0aXN0aWNzIC9Bc3NpZ25tZW50cy9SU3RhdGlzdGljc19Bc3NpZ25tZW50T25lXCJcbiJ9 -->
+<pre><code>[1] &quot;/Users/rodneydavermann/Documents/Fall2021/R_Statistics /Assignments/RStatistics_AssignmentOne&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<ol style="list-style-type: decimal">
-<li>Write code that allows you to create a vector x with the numbers {10,20,30,100,150,10,30,50}. Then, insert the number 168 between the third and fourth elements and assign the result of this insertion to x again.</li>
-</ol>
+<p><br> 1) Write code that allows you to create a vector x with the numbers {10,20,30,100,150,10,30,50}. Then, insert the number 168 between the third and fourth elements and assign the result of this insertion to x again.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueCA8LWMoMTAsMjAsMzAsMTAwLDE1MCwxMCwzMCw1MClcbnhcblxuYGBgIn0= -->
+<pre class="r"><code>x &lt;-c(10,20,30,100,150,10,30,50)
+x
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICAxMCAgMjAgIDMwIDEwMCAxNTAgIDEwICAzMCAgNTBcbiJ9 -->
+<pre><code>[1]  10  20  30 100 150  10  30  50</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><br> Insert the number 168 between the third which is 30 and fourth elements that is 100.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyB4IHZlY3RvclxueCA8LWMoMTAsMjAsMzAsMTAwLDE1MCwxMCwzMCw1MClcbiMgV2UgYXJlIHVzaW5nIHRoZSBhcHBlbmQgZnVuY3Rpb24gdG8gaW5zZXJ0IDE2OC4gXG54IDwtYXBwZW5kKHgsMTY4LDMpXG54XG5gYGAifQ== -->
+<pre class="r"><code># x vector
+x &lt;-c(10,20,30,100,150,10,30,50)
+# We are using the append function to insert 168. 
+x &lt;-append(x,168,3)
+x</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICAxMCAgMjAgIDMwIDE2OCAxMDAgMTUwICAxMCAgMzAgIDUwXG4ifQ== -->
+<pre><code>[1]  10  20  30 168 100 150  10  30  50</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><br> 2) Create a data frame with the following four columns: x (from the previous question), x1, x2, and y. Name the data frame DFAsg1</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDcmVhdGUgeDEsIHgyLCB2ZWN0b3JzXG54MSA8LXJvdW5kKHJub3JtKDksNSwxKSwxKVxueDIgPC1yb3VuZChybm9ybSg5LDUsMSksMSlcbiMgVXNlIHNvcnQgYW5kIHJlcCBmdW5jdGlvbnMgdG8gY3JlYXRlIHkgdmVjdG9yXG55IDwtc29ydChyZXAoYyhcIkFcIixcIkJcIixcIkNcIiksMyksIGRlY3JlYXNpbmcgPSBGKVxueVxuYGBgIn0= -->
+<pre class="r"><code># Create x1, x2, vectors
+x1 &lt;-round(rnorm(9,5,1),1)
+x2 &lt;-round(rnorm(9,5,1),1)
+# Use sort and rep functions to create y vector
+y &lt;-sort(rep(c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;),3), decreasing = F)
+y</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQVwiIFwiQVwiIFwiQVwiIFwiQlwiIFwiQlwiIFwiQlwiIFwiQ1wiIFwiQ1wiIFwiQ1wiXG4ifQ== -->
+<pre><code>[1] &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;C&quot; &quot;C&quot; &quot;C&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueDFcbmBgYCJ9 -->
+<pre class="r"><code>x1</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIuNiA0LjkgNC4yIDQuMCA1LjkgNC4yIDYuMyAzLjQgMy42XG4ifQ== -->
+<pre><code>[1] 2.6 4.9 4.2 4.0 5.9 4.2 6.3 3.4 3.6</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueDJcbmBgYCJ9 -->
+<pre class="r"><code>x2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDYuOCAzLjggNS45IDQuMyA0LjQgMy43IDYuNyA1LjAgMi40XG4ifQ== -->
+<pre><code>[1] 6.8 3.8 5.9 4.3 4.4 3.7 6.7 5.0 2.4</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBjcmVhdGUgdGhlIGRhdGFmcmFtZSBERkFzZzFcbkRGQXNnMSA8LWRhdGEuZnJhbWUoeCx4MSx4Mix5KVxuREZBc2cxXG5gYGAifQ== -->
+<pre class="r"><code># create the dataframe DFAsg1
+DFAsg1 &lt;-data.frame(x,x1,x2,y)
+DFAsg1</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6OSwibmNvbCI6NCwic3VtbWFyeSI6W119LCJyZGYiOiJINHNJQUFBQUFBQUFBM1ZTVFUrRFFCQWRZTkVzQ3JhcGlWR3Z2VUpTNjhHVHdZK1llRFdhMU9PV1VpWGkwZ0NOOWViZjBGL2pEOUMvVk4xbFoxRTNkcExOZS9PWWViT3o0ZXA4TlBSR0hnQTRRQ3dMSEZkUWNHK3VMOElqQUdLTHhBSUNWT0pDRlBVRUllSUU0dEM0RDAzRWg0akhpQ25pTGVMNFhXSGZxTHNFSGNxUGZNajRqSHV2TXQ3aUR1WWRyTjh4OU4xaEUvRUc0cWJTVzc5OTFJTnBFMjEvRi9VdTVqN2lIdnB1NHp4SDFRa3FiMEQxUTV5c0pxZXJ5ZGsvNU84THU1dzlwaFZPSXovUHJvaTlHTFRzUUg5OE5peG9XVHhGMnNhWHRTOXFGMnJPU25KVzZWbGE5Q2FzWnRHMEZQMGlXeG90NjhXc3pnb3VtbXo1RzdoR3MxVWF3dGFjeTV0TXd1Uit6aC9DZ1J6UWZGYmhJNmUvT0ZFajdTKzBjdEZxTGVWM0dVLzEzWE0yVG5OTUFyRnhzM0EwS3pOZTYwMkVXa1YxVVROZDV5VkZycFZtTjFoK0F3Z3JmbWY5QWdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["x"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["x1"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["x2"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["y"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"10","2":"2.6","3":"6.8","4":"A"},{"1":"20","2":"4.9","3":"3.8","4":"A"},{"1":"30","2":"4.2","3":"5.9","4":"A"},{"1":"168","2":"4.0","3":"4.3","4":"B"},{"1":"100","2":"5.9","3":"4.4","4":"B"},{"1":"150","2":"4.2","3":"3.7","4":"B"},{"1":"10","2":"6.3","3":"6.7","4":"C"},{"1":"30","2":"3.4","3":"5.0","4":"C"},{"1":"50","2":"3.6","3":"2.4","4":"C"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[9]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><br> 3) Use the data frame DFAsg1 as a reference. Write ONE LINE of code that returns the standard deviation of the values of x for each of the letters A, B, and C.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyB1c2UgdGFwcGx5IGFuZCByb3VuZCBmdW5jdGlvbnMgdG8gcmV0dXJucyB0aGUgc2Qgb2YgeCBjb2x1bW4gd2l0aCB0aHJlZSBzaWduaWZpY2F0aXZlIGRpZ2l0cy4gXG5TdGFuZGFyZERldmlhdGlvbjwtcm91bmQodGFwcGx5KERGQXNnMSR4LERGQXNnMSR5LHNkKSwzKVxuU3RhbmRhcmREZXZpYXRpb25cbmBgYCJ9 -->
+<pre class="r"><code># use tapply and round functions to returns the sd of x column with three significative digits. 
+StandardDeviation&lt;-round(tapply(DFAsg1$x,DFAsg1$y,sd),3)
+StandardDeviation</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICBBICAgICAgQiAgICAgIEMgXG4xMC4wMDAgMzUuMjMzIDIwLjAwMCBcbiJ9 -->
+<pre><code>     A      B      C 
+10.000 35.233 20.000 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><br> 4)Use the data frame DFAsg1 as a reference. Write ONE LINE of code that returns the average of x1 and x2.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBVc2luZyBhcHBseSBmdW5jdGlvbiB0byBjYWxjdWxhdGUgdGhlIG1lYW4gb2YgeDEgYW5kIHgyLCBhbmQgcm91bmQgdGhlIHJlc3VsdHMgdG8gdGhyZWUgZGlnaXRzLiAgXG5BdmVyYWdlX3gxX3gyPC1yb3VuZChhcHBseShERkFzZzFbLGMoLTEsLTQpXSwyLG1lYW4pLDMpXG5BdmVyYWdlX3gxX3gyXG5gYGAifQ== -->
+<pre class="r"><code># Using apply function to calculate the mean of x1 and x2, and round the results to three digits.  
+Average_x1_x2&lt;-round(apply(DFAsg1[,c(-1,-4)],2,mean),3)
+Average_x1_x2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgeDEgICAgeDIgXG40LjM0NCA0Ljc3OCBcbiJ9 -->
+<pre><code>   x1    x2 
+4.344 4.778 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><br> 5) Use the data frame DFAsg1 as a reference. Write ONE LINE of code that returns the values of x2 for records (rows) where the letter is B or C (i.e., return the values of x2 excluding rows where the letter is A)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyB1c2luZyBzdWJzZXQgZnVuY3Rpb24gdG8gcmV0cmlldmUgeDIgdmFsdWUgd2hlcmUgeSBpcyBCIG9yIENcbm5ld194MiA8LXN1YnNldChERkFzZzEsIHNlbGVjdCA9IGMoeDIseSksIHN1YnNldCA9ICh5PT1cIkJcIiB8IHk9PVwiQ1wiKSlcbm5ld194MlxuYGBgIn0= -->
+<pre class="r"><code># using subset function to retrieve x2 value where y is B or C
+new_x2 &lt;-subset(DFAsg1, select = c(x2,y), subset = (y==&quot;B&quot; | y==&quot;C&quot;))
+new_x2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6Miwic3VtbWFyeSI6W119LCJyZGYiOiJINHNJQUFBQUFBQUFBM1ZRMjA3RE1BeDEwOHRZcFk1TjQ0bC9hQitZaEhpTUFQRUJFMGg3RFYyQmlwSk1iU2JHcDhBM3dTOE5uTlNXUmdXV3JCeWZIQjg3V1Y2dkZ1a3FCWUFRb2lDQU1FWUk4ZDN0VFg0QkVBa3NBb2hnN000ZGl1WUlIRG5CVE9SczRVUE8zbDE4eUl6TzAwOFhYL0lFZk1pdzF5R2N1ajQydlB3ZlhQMEJmcThUYS9WU2RXUXBpQlM3TTlhL0RmVGoxcndXM0pQNU5WRGhqQWlQTUkrY2NEaW9iRlRIZzVoTTE4cXE0cUZGUDZ6Mmc1YVIyZGphYUd3U2M1cHcyQnkwQStKNHE5MW02N3g4MnVybi9Od044TmQ5Wm5RbUIxajBJOFUzV2NWa2xWVDZzZFlWNzk2bys2cWhZb0kvNEQrZzJMUzF0dndTWkx2Q0dxdFlsNWFtWWNhL0RmWS9KWlR0WHljQ0FBQT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["x2"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["y"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"4.3","2":"B","_rn_":"4"},{"1":"4.4","2":"B","_rn_":"5"},{"1":"3.7","2":"B","_rn_":"6"},{"1":"6.7","2":"C","_rn_":"7"},{"1":"5.0","2":"C","_rn_":"8"},{"1":"2.4","2":"C","_rn_":"9"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQXNzaWdubWVudCBPbmUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KPGJyPgpTZXQgdXAgdGhlIHdvcmtpbmcgZGlyZWN0b3J5IGZvciB0aGlzIGFzc2lnbm1lbnQuCmBgYHtyfQpzZXR3ZCgiL1VzZXJzL3JvZG5leWRhdmVybWFubi9Eb2N1bWVudHMvRmFsbDIwMjEvU3RhdGlzdGljcyBXaXRoIFIvQXNzaWdubWVudHMiKQpnZXR3ZCgpCmBgYAoxKSBXcml0ZSBjb2RlIHRoYXQgYWxsb3dzIHlvdSB0byBjcmVhdGUgYSB2ZWN0b3IgeCB3aXRoIHRoZSBudW1iZXJzIHsxMCwyMCwzMCwxMDAsMTUwLDEwLDMwLDUwfS4gVGhlbiwgaW5zZXJ0IHRoZSBudW1iZXIgMTY4IGJldHdlZW4gdGhlIHRoaXJkIGFuZCBmb3VydGggZWxlbWVudHMgYW5kIGFzc2lnbiB0aGUgcmVzdWx0IG9mIHRoaXMgaW5zZXJ0aW9uIHRvIHggYWdhaW4uCgoKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQXNzaWdubWVudCBPbmUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KPGJyPgpTZXQgdXAgdGhlIHdvcmtpbmcgZGlyZWN0b3J5IGZvciB0aGlzIGFzc2lnbm1lbnQuCmBgYHtyfQpzZXR3ZCgiL1VzZXJzL3JvZG5leWRhdmVybWFubi9Eb2N1bWVudHMvRmFsbDIwMjEvUl9TdGF0aXN0aWNzIC9Bc3NpZ25tZW50cy9SU3RhdGlzdGljc19Bc3NpZ25tZW50T25lIikKZ2V0d2QoKQpgYGAKPGJyPgoxKSBXcml0ZSBjb2RlIHRoYXQgYWxsb3dzIHlvdSB0byBjcmVhdGUgYSB2ZWN0b3IgeCB3aXRoIHRoZSBudW1iZXJzIHsxMCwyMCwzMCwxMDAsMTUwLDEwLDMwLDUwfS4gVGhlbiwgaW5zZXJ0IHRoZSBudW1iZXIgMTY4IGJldHdlZW4gdGhlIHRoaXJkIGFuZCBmb3VydGggZWxlbWVudHMgYW5kIGFzc2lnbiB0aGUgcmVzdWx0IG9mIHRoaXMgaW5zZXJ0aW9uIHRvIHggYWdhaW4uCmBgYHtyfQojIENyZWF0ZSB0aGUgeCB2ZWN0b3IKeCA8LWMoMTAsMjAsMzAsMTAwLDE1MCwxMCwzMCw1MCkKeApgYGAKPGJyPgpJbnNlcnQgdGhlIG51bWJlciAxNjggYmV0d2VlbiB0aGUgdGhpcmQgd2hpY2ggaXMgMzAgYW5kIGZvdXJ0aCBlbGVtZW50cyB0aGF0IGlzIDEwMC4KYGBge3J9CiMgeCB2ZWN0b3IKeCA8LWMoMTAsMjAsMzAsMTAwLDE1MCwxMCwzMCw1MCkKIyBXZSBhcmUgdXNpbmcgdGhlIGFwcGVuZCBmdW5jdGlvbiB0byBpbnNlcnQgMTY4LiAKeCA8LWFwcGVuZCh4LDE2OCwzKQp4CmBgYAo8YnI+CjIpIENyZWF0ZSBhIGRhdGEgZnJhbWUgd2l0aCB0aGUgZm9sbG93aW5nIGZvdXIgY29sdW1uczogeCAoZnJvbSB0aGUgcHJldmlvdXMgcXVlc3Rpb24pLCB4MSwgeDIsIGFuZCB5LiBOYW1lIHRoZSBkYXRhIGZyYW1lIERGQXNnMQoKYGBge3J9CiMgQ3JlYXRlIHgxLCB4MiwgdmVjdG9ycwp4MSA8LXJvdW5kKHJub3JtKDksNSwxKSwxKQp4MiA8LXJvdW5kKHJub3JtKDksNSwxKSwxKQojIFVzZSBzb3J0IGFuZCByZXAgZnVuY3Rpb25zIHRvIGNyZWF0ZSB5IHZlY3Rvcgp5IDwtc29ydChyZXAoYygiQSIsIkIiLCJDIiksMyksIGRlY3JlYXNpbmcgPSBGKQp5CngxCngyCmBgYApgYGB7cn0KIyBjcmVhdGUgdGhlIGRhdGFmcmFtZSBERkFzZzEKREZBc2cxIDwtZGF0YS5mcmFtZSh4LHgxLHgyLHkpCkRGQXNnMQpgYGAKPGJyPgozKSBVc2UgdGhlIGRhdGEgZnJhbWUgREZBc2cxIGFzIGEgcmVmZXJlbmNlLiBXcml0ZSBPTkUgTElORSBvZiBjb2RlIHRoYXQgcmV0dXJucyB0aGUgc3RhbmRhcmQgZGV2aWF0aW9uIG9mIHRoZSB2YWx1ZXMgb2YgeCBmb3IgZWFjaCBvZiB0aGUgbGV0dGVycyBBLCBCLCBhbmQgQy4KYGBge3J9CiMgdXNlIHRhcHBseSBhbmQgcm91bmQgZnVuY3Rpb25zIHRvIHJldHVybnMgdGhlIHNkIG9mIHggY29sdW1uIHdpdGggdGhyZWUgc2lnbmlmaWNhdGl2ZSBkaWdpdHMuIApTdGFuZGFyZERldmlhdGlvbjwtcm91bmQodGFwcGx5KERGQXNnMSR4LERGQXNnMSR5LHNkKSwzKQpTdGFuZGFyZERldmlhdGlvbgpgYGAKPGJyPgo0KVVzZSB0aGUgZGF0YSBmcmFtZSBERkFzZzEgYXMgYSByZWZlcmVuY2UuIApXcml0ZSBPTkUgTElORSBvZiBjb2RlIHRoYXQgcmV0dXJucyB0aGUgYXZlcmFnZSBvZiB4MSBhbmQgeDIuCmBgYHtyfQojIFVzaW5nIGFwcGx5IGZ1bmN0aW9uIHRvIGNhbGN1bGF0ZSB0aGUgbWVhbiBvZiB4MSBhbmQgeDIsIGFuZCByb3VuZCB0aGUgcmVzdWx0cyB0byB0aHJlZSBkaWdpdHMuICAKQXZlcmFnZV94MV94Mjwtcm91bmQoYXBwbHkoREZBc2cxWyxjKC0xLC00KV0sMixtZWFuKSwzKQpBdmVyYWdlX3gxX3gyCmBgYAo8YnI+CjUpIFVzZSB0aGUgZGF0YSBmcmFtZSBERkFzZzEgYXMgYSByZWZlcmVuY2UuIFdyaXRlIE9ORSBMSU5FIG9mIGNvZGUgdGhhdCByZXR1cm5zIHRoZSB2YWx1ZXMgb2YgeDIgZm9yIHJlY29yZHMgKHJvd3MpIHdoZXJlIHRoZSBsZXR0ZXIgaXMgQiBvciBDIChpLmUuLCByZXR1cm4gdGhlIHZhbHVlcyBvZiB4MiBleGNsdWRpbmcgcm93cyB3aGVyZSB0aGUgbGV0dGVyIGlzIEEpCmBgYHtyfQojIHVzaW5nIHN1YnNldCBmdW5jdGlvbiB0byByZXRyaWV2ZSB4MiB2YWx1ZSB3aGVyZSB5IGlzIEIgb3IgQwpuZXdfeDIgPC1zdWJzZXQoREZBc2cxLCBzZWxlY3QgPSBjKHgyLHkpLCBzdWJzZXQgPSAoeT09IkIiIHwgeT09IkMiKSkKbmV3X3gyCmBgYAoKCgoKCgo=</div>
 
 
 
