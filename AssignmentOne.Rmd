@@ -64,6 +64,54 @@ Average_x1_x2
 new_x2 <-subset(DFAsg1, select = c(x2,y), subset = (y=="B" | y=="C"))
 new_x2
 ```
+<br>
+6) Add a new column to the data frame DFAsg1 with a logical vector indicating whether the value of x1 is greater than the value of x2. Name this new column “Is_x1_greater”.
+```{r}
+# creating the Is_x1_greater vector
+Is_x1_greater <-DFAsg1$x1 > DFAsg1$x2
+Is_x1_greater
+```
+```{r}
+# adding Is_x1_greater vector to DFAsg1 with data.frame function
+DFAsg1 <-data.frame(DFAsg1,Is_x1_greater)
+DFAsg1
+
+```
+7) Display the duplicate elements in x (i.e., the values that repeat). The function duplicated () may be helpful.
+```{r}
+# using duplicated function to retrieve the duplicat data in X
+DuplicatX <-DFAsg1$x[duplicated(DFAsg1$x)]
+DuplicatX
+```
+8) Write ONE LINE of code that returns the count of how many elements in x are greater than 50.
+```{r}
+# using length function and a subset of x column to get the number of x's elements that > 50.
+NumberGreaterThan50 <-length(DFAsg1$x[DFAsg1$x > 50])
+NumberGreaterThan50
+```
+
+9) Create a vector called “a” containing the numbers from 1 to 9. Create another vector called “b” containing the numbers from 1 to 4.
+```{r}
+# create vectors a and b
+a <-c(1:9)
+b <-c(1:4)
+a
+b
+```
+9a) Create a new vector called “sumAB” using the following expression: sumAB<- a + b. Explain how R obtains the last and second to last elements of the vector sumAB.
+```{r}
+# create sumAB vector by adding a and b vectors
+sumAB <-a+b
+sumAB
+```
+
+
+9b) Write ONE LINE of code that returns the total (i.e., the sum) of all the elements in vectors a and b combined.
+```{r}
+# using sum function with combine a and b vectors as argument
+Combineab <-sum(c(a,b))
+Combineab
+```
 
 
 
